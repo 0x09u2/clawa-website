@@ -10,7 +10,7 @@ export default function CIP({
 }) {
 
   return (
-    <Layout theme={theme} toggleTheme={toggleTheme}>
+    <Layout>
       <section className="section">
         <div className="container">
           <h1>Clawist</h1>

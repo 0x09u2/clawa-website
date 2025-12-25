@@ -8,7 +8,7 @@ export default function Home({
   toggleTheme: () => void;
 }) {
   return (
-    <Layout theme={theme} toggleTheme={toggleTheme}>
+    <Layout>
       {/* page content */}
       {/* HERO */}
       <section className="section hero">
