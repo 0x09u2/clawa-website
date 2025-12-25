@@ -2,39 +2,36 @@ import Link from "next/link";
 import { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
+type Theme = "light" | "dark";
+
 interface LayoutProps {
   children: ReactNode;
 }
 
-type Theme = "light" | "dark";
-
 export default function Layout({ children }: LayoutProps) {
   const [theme, setTheme] = useState<Theme>("light");
   const router = useRouter();
-  const toggleTheme = () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-  };
 
-  // Load theme from localStorage
+  // Load saved theme on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as Theme | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    }
+    setTheme(savedTheme ?? "light");
   }, []);
 
-  // Save theme changes
+  // Apply theme to DOM + persist
   useEffect(() => {
-    localStorage.setItem("theme", theme);
     document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
+
+  // Toggle theme
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   return (
     <>
+      {/* NAV */}
       <nav className="nav">
         <div className="nav-left">
           <Link href="/">Clawa</Link>
@@ -42,28 +39,56 @@ export default function Layout({ children }: LayoutProps) {
 
         <div className="nav-right">
           <div className="nav-links">
-            <Link href="/">Home</Link>
-            <Link href="/docs">Docs</Link>
-            <Link href="/clawist">Clawist</Link>
-            <Link href="/governance">Governance</Link>
-            <Link href="/cip">CIP</Link>
+            <Link href="/" className={router.pathname === "/" ? "active" : ""}>
+              Home
+            </Link>
+            <Link
+              href="/docs"
+              className={router.pathname === "/docs" ? "active" : ""}
+            >
+              Docs
+            </Link>
+            <Link
+              href="/clawist"
+              className={router.pathname === "/clawist" ? "active" : ""}
+            >
+              Clawist
+            </Link>
+            <Link
+              href="/governance"
+              className={router.pathname === "/governance" ? "active" : ""}
+            >
+              Governance
+            </Link>
+            <Link
+              href="/cip"
+              className={router.pathname === "/cip" ? "active" : ""}
+            >
+              CIP
+            </Link>
           </div>
 
-          <button className="theme-toggle" onClick={toggleTheme}>
-            🌙
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
           </button>
         </div>
       </nav>
 
+      {/* PAGE CONTENT */}
       <main>{children}</main>
 
+      {/* FOOTER */}
       <footer className="footer">
         <span>Clawa is an open-source, community-governed ecosystem.</span>
 
         <div className="footer-links">
           {/* GitHub */}
           <a
-            href="https://github.com/your-org/clawa-website"
+            href="https://github.com/0x09u2/clawa-website"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
@@ -74,24 +99,14 @@ export default function Layout({ children }: LayoutProps) {
           </a>
 
           {/* Discord */}
-          <a
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Discord"
-          >
+          <a href="#" target="_blank" rel="noreferrer" aria-label="Discord">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3a14.13 14.13 0 0 0-.635 1.3 18.27 18.27 0 0 0-4.5 0 14.13 14.13 0 0 0-.635-1.3 19.736 19.736 0 0 0-3.432 1.369C4.533 8.045 3.9 11.6 4.158 15.107a19.9 19.9 0 0 0 6.07 3.091 14.8 14.8 0 0 0 1.272-2.074 12.6 12.6 0 0 1-2.004-.96c.168-.124.332-.255.492-.392a14.13 14.13 0 0 0 8.024 0c.16.137.324.268.492.392a12.6 12.6 0 0 1-2.004.96c.368.73.795 1.42 1.272 2.074a19.9 19.9 0 0 0 6.07-3.091c.31-3.76-.43-7.29-2.29-10.738z" />
             </svg>
           </a>
 
-          {/* X / Twitter */}
-          <a
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="X"
-          >
+          {/* X */}
+          <a href="#" target="_blank" rel="noreferrer" aria-label="X">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26L22.5 21.75h-6.937l-5.434-7.086L3.884 21.75H.574l7.73-8.835L1.5 2.25h7.063l4.913 6.44z" />
             </svg>
