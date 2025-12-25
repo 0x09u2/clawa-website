@@ -1,49 +1,11 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
 
-export default function CIP({
-  theme,
-  toggleTheme,
-}: {
-  theme: "light" | "dark";
-  toggleTheme: () => void;
-}) {
-
-  return (
-    <Layout>
-      <section className="section">
-        <div className="container">
-          <h1>Clawist</h1>
-          <p style={{ marginTop: "24px", maxWidth: "700px" }}>
-            Clawist is the identity and governance layer of the Clawa ecosystem.
-            Members participate in proposals, discussions, and community-led development.
-          </p>
-
-          <div className="grid" style={{ marginTop: "40px" }}>
-            <div className="card">
-              <h3>Participate</h3>
-              <p>Join governance and help shape the ecosystem.</p>
-            </div>
-
-            <div className="card">
-              <h3>Propose</h3>
-              <p>Submit Clawa Improvement Proposals (CIPs).</p>
-            </div>
-
-            <div className="card">
-              <h3>Contribute</h3>
-              <p>Build tools, modules, and infrastructure.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
-}
+export default function CIP() {
   return (
     <>
       <Head>
-        <title>CIP Template — Clawa</title>
+        <title>CIP — Clawa</title>
       </Head>
 
       <Layout>
@@ -64,34 +26,22 @@ export default function CIP({
               <p>A short, descriptive title for the proposal.</p>
 
               <h3 style={{ marginTop: "24px" }}>2. Summary</h3>
-              <p>
-                A concise explanation of the proposal and its intent.
-              </p>
+              <p>A concise explanation of the proposal and its intent.</p>
 
               <h3 style={{ marginTop: "24px" }}>3. Motivation</h3>
-              <p>
-                Why this proposal is needed and what problem it addresses.
-              </p>
+              <p>Why this proposal is needed and what problem it addresses.</p>
 
               <h3 style={{ marginTop: "24px" }}>4. Specification</h3>
-              <p>
-                Detailed description of the proposed changes or implementation.
-              </p>
+              <p>Detailed description of the proposed changes or implementation.</p>
 
               <h3 style={{ marginTop: "24px" }}>5. Rationale</h3>
-              <p>
-                Reasoning behind design decisions and alternative approaches.
-              </p>
+              <p>Reasoning behind design decisions and alternative approaches.</p>
 
               <h3 style={{ marginTop: "24px" }}>6. Risks & Considerations</h3>
-              <p>
-                Potential risks, trade-offs, or downsides.
-              </p>
+              <p>Potential risks, trade-offs, or downsides.</p>
 
               <h3 style={{ marginTop: "24px" }}>7. Status</h3>
-              <p>
-                Draft · Review · Accepted · Rejected · Implemented
-              </p>
+              <p>Draft · Review · Accepted · Rejected · Implemented</p>
             </div>
 
             <p style={{ marginTop: "48px", maxWidth: "720px" }}>
