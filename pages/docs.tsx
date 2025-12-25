@@ -1,73 +1,44 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
 
-export default function Docs({
-  theme,
-  toggleTheme,
-}: {
-  theme: "light" | "dark";
-  toggleTheme: () => void;
-}) {
-
-  return (
-    <Layout>
-      <section className="section">
-        <div className="container">
-          <h1>Clawist</h1>
-          <p style={{ marginTop: "24px", maxWidth: "700px" }}>
-            Clawist is the identity and governance layer of the Clawa ecosystem.
-            Members participate in proposals, discussions, and community-led development.
-          </p>
-
-          <div className="grid" style={{ marginTop: "40px" }}>
-            <div className="card">
-              <h3>Participate</h3>
-              <p>Join governance and help shape the ecosystem.</p>
-            </div>
-
-            <div className="card">
-              <h3>Propose</h3>
-              <p>Submit Clawa Improvement Proposals (CIPs).</p>
-            </div>
-
-            <div className="card">
-              <h3>Contribute</h3>
-              <p>Build tools, modules, and infrastructure.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
-}
+export default function Docs() {
   return (
     <>
-      {/* PAGE-SPECIFIC META */}
       <Head>
-        <title>Documentation — Clawa</title>
-        <meta
-          name="description"
-          content="Technical documentation for the Clawa modular blockchain ecosystem."
-        />
+        <title>Docs — Clawa</title>
       </Head>
 
-      {/* PAGE CONTENT */}
-      <Layout theme={theme} toggleTheme={toggleTheme}>
+      <Layout>
         <section className="section">
           <div className="container">
             <h1>Documentation</h1>
-            <p style={{ marginTop: "24px", maxWidth: "700px" }}>
-              This documentation outlines Clawa’s architecture,
-              governance framework, and contribution process.
+
+            <p style={{ marginTop: "24px", maxWidth: "720px" }}>
+              Clawa documentation provides an overview of the ecosystem,
+              architecture, governance, and contribution guidelines.
             </p>
 
-            <ul style={{ marginTop: "32px" }}>
-              <li>• Overview</li>
-              <li>• Ecosystem Architecture</li>
-              <li>• Clawist Governance</li>
-              <li>• Clawa Improvement Proposals (CIP)</li>
-              <li>• Contribution Guide</li>
-            </ul>
+            <div className="grid" style={{ marginTop: "48px" }}>
+              <div className="card">
+                <h3>Overview</h3>
+                <p>Introduction to the Clawa ecosystem and its philosophy.</p>
+              </div>
+
+              <div className="card">
+                <h3>Architecture</h3>
+                <p>Modular design, layers, and system components.</p>
+              </div>
+
+              <div className="card">
+                <h3>Governance</h3>
+                <p>How proposals, voting, and community decisions work.</p>
+              </div>
+
+              <div className="card">
+                <h3>Contributing</h3>
+                <p>Guidelines for developers and community members.</p>
+              </div>
+            </div>
           </div>
         </section>
       </Layout>
