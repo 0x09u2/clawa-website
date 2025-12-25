@@ -1,3 +1,5 @@
+// FORCE REBUILD — REMOVE PAGEPROPS
+
 import Layout from "../components/Layout";
 
 export default function Clawist({
