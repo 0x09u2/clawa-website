@@ -1,11 +1,13 @@
 import Layout from "../components/Layout";
 
-type PageProps = {
+export default function Clawist({
+  theme,
+  toggleTheme,
+}: {
   theme: "light" | "dark";
   toggleTheme: () => void;
-};
-
-export default function Clawist({ theme, toggleTheme }: PageProps) {
+}) {
+  
   return (
     <Layout theme={theme} toggleTheme={toggleTheme}>
       <section className="section">

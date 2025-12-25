@@ -1,11 +1,12 @@
 import Layout from "../components/Layout";
 
-interface PageProps {
+export default function Home({
+  theme,
+  toggleTheme,
+}: {
   theme: "light" | "dark";
   toggleTheme: () => void;
-}
-
-export default function Home({ theme, toggleTheme }: PageProps) {
+}) {
   return (
     <Layout theme={theme} toggleTheme={toggleTheme}>
       {/* page content */}

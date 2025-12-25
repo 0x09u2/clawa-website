@@ -1,7 +1,13 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
 
-export default function Governance() {
+export default function Governance({
+  theme,
+  toggleTheme,
+}: {
+  theme: "light" | "dark";
+  toggleTheme: () => void;
+}) {
   return (
     <>
       <Head>
