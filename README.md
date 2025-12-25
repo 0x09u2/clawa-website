@@ -1,24 +1,33 @@
-Welcome to the NextJS base template bootstrapped using the `create-next-app`. This template supports TypeScript, but you can use normal JavaScript as well.
+# Clawa
+
+Clawa is an open-source, modular blockchain ecosystem focused on
+decentralized governance, community ownership, and long-term sustainability.
+
+## Overview
+
+Clawa is designed as a collection of interoperable components rather than
+a single monolithic protocol. It emphasizes permissionless innovation and
+community-driven decision-making.
+
+## Core Principles
+
+- Modular architecture
+- Open-source development
+- Community governance
+- Long-term sustainability
+
+## Governance
+
+Clawa is governed through the Clawist framework and Clawa Improvement
+Proposals (CIPs).
+
+- Governance overview: `/governance`
+- CIP template: `/cip`
 
 ## Getting Started
 
-Hit the run button to start the development server.
+### Development
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on `/api/hello`. This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-## Productionizing your Next App
-
-To make your next App run smoothly in production make sure to deploy your project with [Repl Deployments](https://docs.replit.com/hosting/deployments/about-deployments)!
-
-You can also produce a production build by running `npm run build` and [changing the run command](https://docs.replit.com/programming-ide/configuring-repl#run) to `npm run start`.
+```bash
+npm install
+npm run dev
