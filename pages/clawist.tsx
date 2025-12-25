@@ -1,4 +1,4 @@
-// FORCE REBUILD — REMOVE PAGEPROPS
+// FORCED REBUILD — PAGEPROPS REMOVED
 
 import Layout from "../components/Layout";
 
