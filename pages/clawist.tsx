@@ -1,9 +1,9 @@
 import Layout from "../components/Layout";
 
-interface Pageprops {
+type PageProps = {
   theme: "light" | "dark";
   toggleTheme: () => void;
-}
+};
 
 export default function Clawist({ theme, toggleTheme }: PageProps) {
   return (
