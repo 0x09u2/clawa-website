@@ -2,19 +2,20 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/globals.css";
 
-// ABSOLUTE SAFE VERSION — DO NOT EDIT
-export default function App(appProps: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Clawa</title>
+        <title>Clawa — Open, Community-Governed Blockchain Ecosystem</title>
+        <meta
+          name="description"
+          content="Clawa is an open-source, modular blockchain ecosystem focused on governance, community sovereignty, and permissionless innovation."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/*
-        Explicit access — no destructuring, no scope ambiguity
-      */}
-      <appProps.Component {...appProps.pageProps} />
+      <Component {...pageProps} />
     </>
   );
 }
