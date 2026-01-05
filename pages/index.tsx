@@ -1,15 +1,16 @@
-import Layout from "../components/Layout";
+import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
-export default function Home({
-  theme,
-  toggleTheme,
-}: {
-  theme: "light" | "dark";
-  toggleTheme: () => void;
-}) {
+export default function Home() {
   return (
     <Layout>
-      {/* page content */}
+      {/* SEO */}
+      <SEO
+        title="Clawa — Modular, Community-Driven Blockchain Ecosystem"
+        description="Clawa is an open-source ecosystem focused on modular infrastructure, decentralized governance, and long-term community ownership."
+        url="https://clawa.xyz"
+      />
+
       {/* HERO */}
       <section className="section hero">
         <div className="container">
@@ -21,8 +22,12 @@ export default function Home({
           </p>
 
           <div className="buttons">
-            <button className="btn btn-primary">Read Documentation</button>
-            <button className="btn">Join Clawist</button>
+            <a href="/docs" className="btn btn-primary">
+              Read Documentation
+            </a>
+            <a href="/clawist" className="btn">
+              Join Clawist
+            </a>
           </div>
         </div>
       </section>
@@ -60,7 +65,6 @@ export default function Home({
         </div>
       </section>
 
-
       {/* PRINCIPLES */}
       <section className="section section-light">
         <div className="container grid">
@@ -72,9 +76,7 @@ export default function Home({
           ].map((item) => (
             <div key={item} className="card">
               <h3>{item}</h3>
-              <p>
-                Designed for long-term, permissionless collaboration.
-              </p>
+              <p>Designed for long-term, permissionless collaboration.</p>
             </div>
           ))}
         </div>
@@ -91,13 +93,21 @@ export default function Home({
           </p>
 
           <div className="ecosystem" style={{ marginTop: "48px" }}>
-            <div className="ecosystem-item">Clawist<br />Identity & Governance</div>
-            <div className="ecosystem-item">Clawa Tools<br />SDKs & Libraries</div>
+            <div className="ecosystem-item">
+              Clawist<br />Identity & Governance
+            </div>
+            <div className="ecosystem-item">
+              Clawa Tools<br />SDKs & Libraries
+            </div>
 
             <div className="ecosystem-center">Clawa Core</div>
 
-            <div className="ecosystem-item">Optional Chain<br />Infrastructure Layer</div>
-            <div className="ecosystem-item">dApps<br />Wallets, Dashboards</div>
+            <div className="ecosystem-item">
+              Optional Chain<br />Infrastructure Layer
+            </div>
+            <div className="ecosystem-item">
+              dApps<br />Wallets, Dashboards
+            </div>
           </div>
         </div>
       </section>
@@ -135,7 +145,11 @@ export default function Home({
           </p>
 
           <div className="community">
-            <a href="https://github.com/your-org" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/0x09u2"
+              target="_blank"
+              rel="noreferrer"
+            >
               <h3>GitHub</h3>
               <p>Open-source repositories and contributions</p>
             </a>
@@ -145,7 +159,7 @@ export default function Home({
               <p>Community discussions and coordination</p>
             </a>
 
-            <a href="#" target="_blank" rel="noreferrer">
+            <a href="/cip" target="_blank" rel="noreferrer">
               <h3>CIP Process</h3>
               <p>Submit and review Clawa Improvement Proposals</p>
             </a>
@@ -157,50 +171,31 @@ export default function Home({
       <section className="section section-light">
         <div className="container">
           <h2>Roadmap</h2>
-          <p style={{ marginTop: "16px", maxWidth: "700px" }}>
-            Development follows a phased approach, prioritizing
-            decentralization, transparency, and sustainability.
-          </p>
 
           <div className="timeline">
             <div className="timeline-item">
               <h3>Phase 1 — Foundation</h3>
-              <p>
-                Branding, documentation, ecosystem design, and
-                Clawist v1 identity layer.
-              </p>
+              <p>Branding, documentation, ecosystem design, Clawist v1.</p>
             </div>
 
             <div className="timeline-item">
               <h3>Phase 2 — Core Development</h3>
-              <p>
-                Clawa Core specifications, SDKs, governance structure,
-                and contributor tooling.
-              </p>
+              <p>Clawa Core specs, SDKs, governance tooling.</p>
             </div>
 
             <div className="timeline-item">
               <h3>Phase 3 — Infrastructure</h3>
-              <p>
-                Optional Clawa Chain, identity modules, indexing tools,
-                and interoperability standards.
-              </p>
+              <p>Optional Clawa Chain, identity & indexing modules.</p>
             </div>
 
             <div className="timeline-item">
               <h3>Phase 4 — Expansion</h3>
-              <p>
-                Sub-project launches, partnerships, grants, and
-                community-led initiatives.
-              </p>
+              <p>Sub-projects, partnerships, ecosystem grants.</p>
             </div>
 
             <div className="timeline-item">
               <h3>Phase 5 — DAO Maturity</h3>
-              <p>
-                Full DAO transition and long-term sustainability
-                mechanisms.
-              </p>
+              <p>Full DAO transition and sustainability mechanisms.</p>
             </div>
           </div>
         </div>
