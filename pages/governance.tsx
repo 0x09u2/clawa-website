@@ -1,8 +1,13 @@
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import Link from "next/link"
 
 export default function Governance() {
   return (
+    <Link href="/governance" className="governance-badge">
+      <span className="badge-label">Governance</span>
+      <span className="badge-status">Phase 0 — Genesis</span>
+    </Link>
     <>
       <SEO
         title="Governance — Clawa"
@@ -20,6 +25,32 @@ export default function Governance() {
               Governance prioritizes decentralization, inclusivity, and
               long-term sustainability.
             </p>
+
+            {/* GOVERNANCE STATUS */}
+            <div
+              className="card"
+              style={{ marginTop: "40px", maxWidth: "720px" }}
+            >
+              <h3>Current Governance Status</h3>
+              <p style={{ marginTop: "8px" }}>
+                Phase 0 — Genesis
+              </p>
+              <p style={{ marginTop: "12px" }}>
+                Governance is open and community-driven. Early contributors
+                coordinate through discussion, proposals, and social consensus.
+                Maintainers act as stewards, not authorities.
+              </p>
+
+              <a
+                href="https://github.com/0x09u2/clawa-website/blob/main/governance/GOVERNANCE.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn"
+                style={{ marginTop: "16px", display: "inline-block" }}
+              >
+                Read Full Governance Spec →
+              </a>
+            </div>
 
             <h2 style={{ marginTop: "64px" }}>Clawist Governance</h2>
             <p style={{ marginTop: "16px", maxWidth: "720px" }}>
@@ -49,6 +80,14 @@ export default function Governance() {
               to go through public discussion and refinement before reaching
               a final status such as accepted, rejected, or implemented.
             </p>
+
+            <a
+              href="/cip"
+              className="btn btn-primary"
+              style={{ marginTop: "32px" }}
+            >
+              View CIP Process
+            </a>
           </div>
         </section>
       </Layout>

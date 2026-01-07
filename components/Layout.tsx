@@ -1,3 +1,4 @@
+import GovernanceBadge from "./GovernanceBadge"
 import { ReactNode, useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -137,6 +138,8 @@ export default function Layout({ children }: LayoutProps) {
       {/* FOOTER */}
       <footer className="footer">
         <span>Clawa is an open-source, community-governed ecosystem.</span>
+
+        <GovernanceBadge />
 
         <div className="footer-links">
           <a
