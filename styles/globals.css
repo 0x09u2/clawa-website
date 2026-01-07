@@ -98,6 +98,43 @@ h2 + p {
 }
 
 /* =========================
+   GOVERNANCE STATUS BANNER
+========================= */
+
+.gov-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 10px 16px;
+  font-size: 13px;
+
+  background: var(--light);
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+
+  text-align: center;
+}
+
+.gov-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.gov-text {
+  max-width: 720px;
+}
+
+/* =========================
    NAVIGATION
 ========================= */
 

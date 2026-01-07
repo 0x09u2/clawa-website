@@ -123,6 +123,14 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </nav>
 
+      {/* GOVERNANCE STATUS BANNER */}
+      <div className="gov-banner">
+        <span className="gov-badge">Early Governance</span>
+        <span className="gov-text">
+          Clawa governance is live and evolving through open community participation.
+        </span>
+      </div>
+
       {/* PAGE CONTENT */}
       <main>{children}</main>
 
@@ -154,6 +162,10 @@ export default function Layout({ children }: LayoutProps) {
             </svg>
           </a>
         </div>
+
+        <span style={{ fontSize: "12px", opacity: 0.7 }}>
+          Governance status: Early-stage · Open participation
+        </span>
       </footer>
     </>
   );
